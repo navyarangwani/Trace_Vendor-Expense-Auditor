@@ -112,3 +112,17 @@ async def get_summary(db: Session = Depends(get_db)):
         active_flags=active_flags
     )
 
+@app.delete("/clear-all")
+async def clear_all_data(db: Session = Depends(get_db)):
+    """Clear all invoices and anomalies from the database"""
+    try:
+        # Delete all anomalies first (due to foreign key constraints if any)
+        db.query(Anomaly).delete()
+        # Delete all invoices
+        db.query(Invoice).delete()
+        db.commit()
+        return {"message": "All data cleared successfully", "deleted_invoices": True, "deleted_anomalies": True}
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=str(e))
+

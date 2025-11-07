@@ -32,13 +32,36 @@ function App() {
     fetchData()
   }
 
+  const handleClearAll = async () => {
+    if (window.confirm('Are you sure you want to clear all data? This action cannot be undone.')) {
+      try {
+        await axios.delete(`${API_BASE_URL}/clear-all`)
+        await fetchData()
+        alert('All data cleared successfully!')
+      } catch (error) {
+        console.error('Error clearing data:', error)
+        alert('Failed to clear data. Please try again.')
+      }
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
       <div className="container mx-auto px-4 py-8">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">
-            🔍 Trace – Vendor & Expense Auditor
-          </h1>
+          <div className="flex items-center justify-between mb-2">
+            <h1 className="text-4xl font-bold text-gray-800">
+              🔍 Trace – Vendor & Expense Auditor
+            </h1>
+            {(summary.total_invoices > 0 || summary.active_flags > 0) && (
+              <button
+                onClick={handleClearAll}
+                className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors duration-200 font-medium text-sm"
+              >
+                🗑️ Clear All Data
+              </button>
+            )}
+          </div>
           <p className="text-gray-600">
             Detect duplicate invoices, policy violations, and suspicious vendor transactions
           </p>
