@@ -1,0 +1,24 @@
+invoice_id,vendor,amount,date,source
+INV-001,Acme Corp,5000.00,2024-01-15,ERP
+INV-002,Tech Solutions,7500.00,2024-01-16,Manual
+INV-003,Global Supplies,12000.00,2024-01-17,ERP
+INV-001,Acme Corp,5000.00,2024-01-18,Manual
+INV-004,Office Depot,3500.00,2024-01-19,ERP
+INV-005,Tech Solutions,8500.00,2024-01-20,Manual
+INV-006,Global Supplies,15000.00,2024-01-21,ERP
+INV-007,Acme Corp,2500.00,2024-01-22,Manual
+INV-002,Tech Solutions,7500.00,2024-01-23,ERP
+INV-008,Office Depot,4500.00,2024-01-24,Manual
+INV-009,Global Supplies,8000.00,2024-01-25,ERP
+INV-010,Acme Corp,3000.00,2024-01-26,Manual
+INV-011,Tech Solutions,11000.00,2024-01-27,ERP
+INV-012,Office Depot,2000.00,2024-01-28,Manual
+INV-013,Global Supplies,9500.00,2024-01-29,ERP
+INV-014,Acme Corp,6000.00,2024-01-30,Manual
+INV-015,Tech Solutions,4000.00,2024-02-01,ERP
+INV-016,Office Depot,13000.00,2024-02-02,Manual
+INV-017,Global Supplies,5500.00,2024-02-03,ERP
+INV-018,Acme Corp,7000.00,2024-02-04,Manual
+INV-019,Tech Solutions,9000.00,2024-02-05,ERP
+INV-020,Office Depot,18000.00,2024-02-06,Manual
+

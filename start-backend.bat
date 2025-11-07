@@ -1,0 +1,9 @@
+@echo off
+echo Starting Trace Backend...
+cd /d "%~dp0backend"
+echo Installing/updating dependencies...
+python -m pip install -r requirements.txt
+echo Starting server...
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+pause
+
